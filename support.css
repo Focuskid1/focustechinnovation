@@ -1,0 +1,88 @@
+
+        /* Base styling */
+        body {
+            color: #3f3f3f;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .ff {
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sn {
+            display: flex;
+            align-items: center;
+        }
+        i[id=back]{
+            margin-left: 10px;
+            font-size: 20px;
+            color: black;
+        }
+        i[id=mail]{
+    color: white;
+    font-size: 20px;
+    margin-left: 7px;
+}
+.fgoal{
+    justify-content: center;
+    text-align: center;
+}
+.tgoal{
+       background-color: #303abf;
+       border: blue;
+       color: white;
+       height: 50px;
+       width: 140px;
+       border-radius: 18px;
+       font-size: 16px;
+       text-align: center;    
+       justify-content: center;
+}
+h2{
+            color: black;
+            margin-left: 10px;
+            text-align: center;
+        }
+        .inno{
+            font-size: 15px;
+            
+            margin-left: 15px
+        }
+        i[id=founder]{
+    color: white;
+    font-size: 20px;
+    margin-left: 7px;
+}
+.fgoal{
+    justify-content: center;
+    text-align: center;
+}
+.tgoal{
+background-color: #303abf;
+            border: blue;
+            color: white;
+            height: 50px;
+            width: 140px;
+            border-radius: 18px;
+            font-size: 16px;
+            text-align: center;
+            justify-content: center;
+}
+.coffee{
+   background-color: #303abf;
+            border: blue;
+            color: white;
+            height: 50px;
+            width: 150px;
+            border-radius: 18px;
+            font-size: 16px;
+            text-align: center;
+            justify-content: center;
+} 
+.agoal{
+    text-decoration: none;
+    color: white;
+}

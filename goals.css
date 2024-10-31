@@ -1,0 +1,112 @@
+
+        body {
+            color: #3f3f3f;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .ff {
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            display: flex;
+            align-items: center;
+        }
+        .inno{
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        h2{
+            color: black;
+            margin-left: 12px;
+        }
+        
+        .pweb{
+    font-size: 25px;
+    text-deciration: none;
+    color: black;
+    text-align: center;
+    justify-content: center;
+}
+
+}
+i[id=mail]{
+    color: white;
+    font-size: 20px;
+    margin-left: 1px;
+}
+.goal{
+    justify-content: center;
+    text-align: center;
+}
+.bgoal{
+background-color: #303abf;
+            border: blue;
+            color: white;
+            height: 50px;
+            width: 140px;
+            border-radius: 18px;
+            font-size: 16px;
+            text-align: center;
+            justify-content: center;
+}
+footer{
+            background-color: #F2F0EF;
+            bottom: 0;
+            flex-shrink: 0;
+            margin-top: 20px;
+            padding: 20px;
+       }
+       .follow{
+            font-size: 20px;
+            margin-left: 35px;
+            justify-content: left;
+            color: black;
+       }
+       .afooter{
+            color: black;
+            text-decoration: none;
+       }
+       i[id=contact] {
+            color: black;
+            font-size: 50px;
+       }
+       .fweb{
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+            justify-content: left;
+       }
+       a[id=contact]{
+            text-decoration: none;
+            color: black;
+       }
+       .eweb{
+    font-size: 35px;
+    text-deciration: none;
+    color: black;
+    text-align: center;
+    justify-content: center;
+}
+i[id=back]{
+    font-size: 22px;
+    margin-left: 10px;
+}
+.back{
+    color: black;
+}
+i[id=quote]{
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+}
+ .fp{
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }

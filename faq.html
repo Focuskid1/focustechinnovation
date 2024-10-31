@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Focustech | Tech Company</title>
+    <link rel="stylesheet" href="faq.css">
+   </head>
+<body>
+     <div class="sn">
+                <a href="index.html" class="back">
+       <big><i class="fa fa-chevron-left" aria-hidden="true" id="back"></i></big>
+       </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p class="ff">
+            <img src="ff.jpg" width="60" height="40px">
+            <big>Focustech</big>
+        </p>
+    </div>
+    <br>
+    
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        <br><br>
+        <div class="faq-item">
+            <h3 class="question">What is the history of<br> Focustech?<i class="fa fa-chevron-down" aria-hidden="true" id="faq"></i></h3>
+            <p class="answer">Focustech, a visionary technology company, embarked on its journey in 2024. Founded by Edomani Paul Chibuike, a passionate innovator, the company was born with a mission to Transform the digital world.</p>
+            
+<p class="answer">questions From its humble beginnings, Focustech quickly established itself as a leader in Focustech Innovation. The company's commitment to create a positive social impact and enhance tech has been instrumental in its success. </p>
+  
+        </div>
+        
+        <div class="faq-item">
+            <h3 class="question">How to contact Focustech<br> Innovation<i class="fa fa-chevron-down" aria-hidden="true" id="faq"></i></h3>
+            <p class="answer">Click the Mail button at the bottom of every page to message Us</p>
+        </div>
+        <div class="faq-item">
+            
+            <h3 class="question">Focustech mission and<br> vision<i class="fa fa-chevron-down" aria-hidden="true" id="faq"></i></h3>
+            <p class="answer"><b>Mission:</b></p>
+            <p class="answer">To drive technological innovation</p>
+            <p class="answer">To improve lifes</p>
+            <p class="answer">To empower businesses by building stunning website for businesses</p>
+            <p class="answer"><b>Vision:</b></p>
+           <p class="answer">To be a global leader in technology</p>
+           <p class="answer">To create a better world through technology</p>
+           <p class="answer">To shape the future of technology</p>
+        </div>
+        </div>
+        <br>
+        <div class="fgoal">
+         <a href="mailto:focustechinnovation@gmail.com" class="fgoal"><button class="tgoal"><b>Contact Us<i class="fa-solid fa-envelope" id="mail"></i></b></button></a>
+           </div>
+           
+    <script>
+       const questions = document.querySelectorAll('.question');
+
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        question.parentElement.classList.toggle('active');
+    });
+});
+ 
+    </script>
+</body>
+</html>
