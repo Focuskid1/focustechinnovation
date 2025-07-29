@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusTech Innovation | Advanced Web Solutions | Forex Trading | Premium Graphics</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("VajKKCPMs4Bz3v3jl");
+    })();
+  </script>
+  
+    <style>
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #4cc9f0;
+            --accent-color: #f72585;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f8f9fa;
+            --text-light: #f8f9fa;
+            --text-dark: #16213e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        .theme-dark {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        .theme-dark .card {
+            background-color: #232342;
+            color: var(--text-light);
+        }
+        
+        .theme-dark .navbar {
+            background-color: rgba(26, 26, 46, 0.95);
+        }
+        
+        .theme-dark .footer {
+            background-color: #0f0f1a;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581472723648-909f4851d4ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            opacity: 0.2;
+        }
+        
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0) rotate(0); }
+            33% { transform: translateY(-100px) translateX(100px) rotate(120deg); }
+            66% { transform: translateY(100px) translateX(-100px) rotate(240deg); }
+            100% { transform: translateY(0) translateX(0) rotate(360deg); }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(74, 128, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 128, 255, 0.4);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            bottom: -15px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .theme-dark .service-card {
+            background: #232342;
+            color: white;
+        }
+        
+        .team-member {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(70%);
+            transition: all 0.4s ease;
+        }
+        
+        .team-member:hover .team-details {
+            transform: translateY(0);
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-dark .testimonial {
+            background: #232342;
+            color: white;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial::before {
+            content: '\201C';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(74, 128, 255, 0.1);
+            font-family: sans-serif;
+            line-height: 1;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-dark .contact-form input,
+        .theme-dark .contact-form textarea {
+            background: #232342;
+            border-color: #393963;
+            color: var(--text-light);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(74, 128, 255, 0.1);
+            outline: none;
+        }
+        
+        .footer {
+            background-color: #f1f5f9;
+            padding: 70px 0 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-color);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-dark .stat-card {
+            background: #232342;
+            color: white;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 12, 163, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-item img {
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            position: fixed;
+            top: 0;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            width: 0%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-dark .bar {
+            background-color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .navbar-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px;
+                transition: all 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .theme-dark .navbar-menu {
+                background-color: #1a1a2e;
+            }
+            
+            .navbar-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn.active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .mobile-menu-btn.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-btn.active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            height: calc(100% - 20px);
+            width: 1px;
+            background: linear-gradient(to bottom, var(--secondary-color), transparent);
+        }
+        
+        .process-step:last-child::after {
+            display: none;
+        }
+        
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: move 25s infinite alternate;
+        }
+        
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, -100px); }
+        }
+        
+        .typed-cursor {
+            opacity: 1;
+            animation: typedjsBlink 0.7s infinite;
+        }
+        
+        @keyframes typedjsBlink {
+            50% { opacity: 0.0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <nav class="navbar py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#" class="text-3xl font-bold flex items-center">
+                <span class="text-primary-color">Focus</span><span class="text-accent-color">Tech</span>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <div class="navbar-menu flex items-center">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="animated-bg">
+            <div class="circle" style="width: 300px; height: 300px; top: 10%; left: 10%;"></div>
+            <div class="circle" style="width: 200px; height: 200px; top: 40%; right: 20%;"></div>
+            <div class="circle" style="width: 150px; height: 150px; bottom: 20%; left: 30%;"></div>
+        </div>
+        
+        <div class="hero-particles" id="particles"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="hero-content">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6" data-aos="fade-up">
+                    <span id="typed-text">Innovative Tech Solutions</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-xl" data-aos="fade-up" data-aos-delay="200">
+                    Transforming ideas into exceptional digital experiences with cutting-edge technology and creative innovation.
+                </p>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="#services" class="btn-primary mr-4">Our Services</a>
+                    <a href="#contact" class="text-white underline">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl" data-aos="fade-up">Our Premium Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="service-card p-8" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Web Development</h3>
+                    <p class="text-gray-600 mb-6 text-center">Creating responsive, modern websites with cutting-edge technologies and seamless user experiences.</p>
+                    
+                    <div class="process-steps mt-8">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4 class="text-xl font-medium mb-2">Discovery</h4>
+                            <p class="text-gray-600">Understanding your business needs and objectives to create targeted solutions.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4 class="text-xl font-medium mb-2">Design</h4>
+                            <p class="text-gray-600">Creating intuitive UI/UX designs that align with your brand identity.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4 class="text-xl font-medium mb-2">Development</h4>
+                            <p class="text-gray-600">Building robust applications with clean, efficient, and maintainable code.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="btn-primary">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Forex Trading</h3>
+                    <p class="text-gray-600 mb-6 text-center">Expert forex trading solutions with advanced analytics and strategic market insights.</p>
+                    
+                    <div class="chart-container">
+                        <canvas id="forexChart"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-6 mb-8">
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <p class="text-gray-600">Success Rate</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <p class="text-gray-600">Market Monitoring</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Graphics Design</h3>
+                    <p class="text-gray-600 mb-6 text-center">Stunning visual designs that captivate audiences and strengthen brand identity.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Portfolio" class="w-full h-40 object-cover">
+                            <div class="portfolio-overlay">
+                                <h4 class="text-white font-semibold">Brand Identity</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Portfolio" class="w-full h-40 object-cover">
+                            <div class="portfolio-overlay">
+                                <h4 class="text-white font-semibold">UI/UX Design</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#contact" class="btn-primary">View Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="section-title text-3xl md:text-4xl">About FocusTech Innovation</h2>
+                    <p class="text-gray-600 my-6">
+                        FocusTech Innovation is a premier technology company specializing in creating cutting-edge digital solutions for businesses across various industries. Our mission is to empower organizations through innovative technology and exceptional service.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Founded on the principles of excellence, integrity, and innovation, we have consistently delivered outstanding results that exceed client expectations. Our team of experts brings together diverse skills and experiences to tackle the most complex challenges.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <p class="text-gray-600">Projects Completed</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number">98%</div>
+                            <p class="text-gray-600">Client Satisfaction</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number">24</div>
+                            <p class="text-gray-600">Team Members</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Team" class="rounded-lg shadow-xl w-full h-auto">
+                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold mb-2">Our Vision</h3>
+                        <p class="text-gray-600">To transform the digital landscape through innovation and excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl" data-aos="fade-up">Leadership Team</h2>
+            
+            <div class="mt-12 flex justify-center">
+                <div class="team-member w-full max-w-sm" data-aos="fade-up">
+                    <img src="ceo.jpg" alt="CEO" class="w-full h-auto">
+                    <div class="team-details">
+                        <h3 class="text-2xl font-bold">Edomani Paul Chibuike</h3>
+                        <p class="text-lg text-gray-200 mb-4">Chief Executive Officer</p>
+                        <p class="mb-4">
+                            With over 15 years of experience in technology and business leadership, Edomani has led FocusTech Innovation to become an industry leader in tech solutions.
+                        </p>
+                        <div class="flex">
+                            <a href="#" class="social-icon mr-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon mr-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl" data-aos="fade-up">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="portfolio-item" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-2xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-white mb-4">Modern shopping experience with advanced features</p>
+                        <a href="#" class="bg-white text-primary-color py-2 px-4 rounded-full">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-2xl font-bold mb-2">Forex Trading App</h3>
+                        <p class="text-white mb-4">Real-time trading platform with analytics</p>
+                        <a href="https://focus-forex.onrender.com" class="bg-white text-primary-color py-2 px-4 rounded-full">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Portfolio Project" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-white text-2xl font-bold mb-2">Brand Identity</h3>
+                        <p class="text-white mb-4">Complete branding for tech startup</p>
+                        <a href="#" class="bg-white text-primary-color py-2 px-4 rounded-full">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl" data-aos="fade-up">Client Testimonials</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="testimonial" data-aos="fade-up">
+                    <p class="text-gray-600 mb-6">
+                        "FocusTech Innovation transformed our business with their exceptional web development services. The team's attention to detail and commitment to excellence exceeded our expectations."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-600">CEO, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-gray-600 mb-6">
+                        "The forex trading platform developed by FocusTech has revolutionized how we approach the market. The analytics and insights provided have been instrumental to our success."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Rodriguez</h4>
+                            <p class="text-gray-600">Director, ForexMasters</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+                    <p class="text-gray-600 mb-6">
+                        "The graphic design team at FocusTech Innovation brought our brand to life. Their creativity and strategic approach helped us stand out in a competitive market."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Emma Williams</h4>
+                            <p class="text-gray-600">Marketing Director, Innovate Inc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="section-title text-3xl md:text-4xl">Get In Touch</h2>
+                    <p class="text-gray-600 my-6">
+                        Ready to transform your ideas into reality? Contact us today to discuss your project and discover how FocusTech Innovation can help you achieve your goals.
+                    </p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary-color flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Our Location</h4>
+                            <p class="text-gray-600">FCT, Nigeria</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary-color flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Email Us</h4>
+                            <p class="text-gray-600">focustechinnovation@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary-color flex items-center justify-center mr-4">
+                            <i class="fas fa-phone-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Call Us</h4>
+                            <p class="text-gray-600">+2347061400188</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex mt-8">
+                        <a href="https://www.facebook.com/profile.php?id=61563183089843" class="social-icon mr-4"><i class="fab fa-facebook-f"></i></a>
+                  
+                        <a href="https://wa.me/+2347061400188?text=Hello%20Sir%2C%20I%27m%20chatting%20from%20your%20Company%20Website%20Can%20you%20please%20provide%20more%20details%3F" class="social-icon mr-4"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/focuskid19?r=nametag" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up">
+                    <form id="contact-form" class="contact-form bg-white rounded-lg p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
+                        
+                        <div class="mb-4">
+                            <input type="text" placeholder="Your Name" required id="name" name="name" class="contact-input">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <input type="email" placeholder="Your Email" required id="email" name="email" class="contact-input">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <input type="text" placeholder="Subject" id="subject" name="subject"class="contact-input">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <textarea rows="5" placeholder="Your Message" required id="message" name="message" class="contact-input"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">FocusTech</h3>
+                    <p class="text-gray-600 mb-6">
+                        Delivering innovative technology solutions that empower businesses to reach their full potential.
+                    </p>
+                   <div class="flex mt-8">
+                        <a href="https://www.facebook.com/profile.php?id=61563183089843" class="social-icon mr-4"><i class="fab fa-facebook-f"></i></a>
+                  
+                        <a href="https://wa.me/+2347061400188?text=Hello%20Sir%2C%20I%27m%20chatting%20from%20your%20Company%20Website%20Can%20you%20please%20provide%20more%20details%3F" class="social-icon mr-4"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/focuskid19?r=nametag" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Our Services</h4>
+                    <ul>
+                        <li class="mb-3"><a href="#" class="text-gray-600 hover:text-accent-color transition-colors">Web Development</a></li>
+                        <li class="mb-3"><a href="#" class="text-gray-600 hover:text-accent-color transition-colors">Forex Trading</a></li>
+                        <li class="mb-3"><a href="#" class="text-gray-600 hover:text-accent-color transition-colors">Graphics Design</a></li>
+                        <li class="mb-3"><a href="#" class="text-gray-600 hover:text-accent-color transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-accent-color transition-colors">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                    <ul>
+                        <li class="mb-3"><a href="#home" class="text-gray-600 hover:text-accent-color transition-colors">Home</a></li>
+                        <li class="mb-3"><a href="#about" class="text-gray-600 hover:text-accent-color transition-colors">About Us</a></li>
+                        <li class="mb-3"><a href="#services" class="text-gray-600 hover:text-accent-color transition-colors">Services</a></li>
+                        <li class="mb-3"><a href="#portfolio" class="text-gray-600 hover:text-accent-color transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-accent-color transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-600 mb-6">Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Your Email" class="p-3 rounded-l border border-gray-300 w-full focus:outline-none focus:border-secondary-color">
+                            <button type="submit" class="bg-primary-color text-white p-3 rounded-r hover:bg-secondary-color transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center">
+                <p class="text-gray-600">&copy; 2025 FocusTech Innovation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    
+    
+    <script src="script.js"></script>
+      <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_5yl70s8', 'template_5r7sjrt', this)
+        .then(function(response) {
+          alert("Message sent successfully!");
+        }, function(error) {
+          alert("Failed to send message: " + error.text);
+        });
+    });
+  </script>
+  
+</body>
+</html>
